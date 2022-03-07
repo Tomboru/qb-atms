@@ -77,7 +77,7 @@ RegisterNetEvent('qb-atms:client:loadATM', function(cards)
             end
         end
     else
-        QBCore.Functions.Notify("Please visit a branch to order a card", "error")
+        QBCore.Functions.Notify("Bitte gehe zu einer Bank und bestelle dir eine Karte", "error")
     end
 end)
 
@@ -100,7 +100,7 @@ CreateThread(function()
 		if (isAtATM and not hasAlreadyEnteredMarker) or (isAtATM and LastZone ~= currentZone) then
 			hasAlreadyEnteredMarker, LastZone = true, currentZone
 			CurrentAction     = 'openAtm'
-			exports['qb-drawtext']:DrawText('[E] Access atm','left')
+			exports['qb-drawtext']:DrawText('[E] ATM benutzen','left')
 		end
 		if not isAtATM and hasAlreadyEnteredMarker then
 			hasAlreadyEnteredMarker = false
